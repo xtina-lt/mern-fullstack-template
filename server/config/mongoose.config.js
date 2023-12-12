@@ -1,4 +1,4 @@
-import {fancy} from '../utils/fancy.js'
+import {fancy} from 'utils/fancy.js'
 // 1 ) CONNECT TO MONGOOSE
 //     object data modeling (ODM) library for MongoDB and Node.js
 import { connect } from 'mongoose';

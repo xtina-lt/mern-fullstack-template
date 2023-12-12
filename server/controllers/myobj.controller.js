@@ -1,4 +1,4 @@
-import { fancy } from "../utils/fancy.js";
+import { fancy } from "utils/fancy.js";
 import MODEL from "../models/myobj.model.js";
 
 let temp = {}

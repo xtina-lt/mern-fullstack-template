@@ -12,7 +12,7 @@ PURPOSE:
     - uses custom utility which is made from boxen and chalk
 */
 
-import {fancy} from './utils/fancy.js'
+import {fancy} from 'utils/fancy.js'
 // import HOLDS from './routes/hold.routes.js'
 import MYOBJ from './routes/myobj.routes.js'
 // CANNOT POST TO /API/USER ?
