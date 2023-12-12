@@ -60,6 +60,62 @@ export default {
             res.status(400).json(temp);
         }
     },
+    search: async (req, res) => {
+        // my fancy log. optional
+        fancy.log("Reading", JSON.stringify(req.params.att))
+        
+        // 1 ) GET THE EXTRA INFO NEEDED TO CREATE THE QUERY
+        //         CONDUCT LOGIC PER ATRRIBUTE
+        // save in memory
+        let logic = {}
+        // use a switch statement to make logic for each attribute
+        switch (req.params.att){
+            // get words containing the query
+            case "strAtt" :
+                logic = { '$regex': req.params.query }
+                console.log(logic)
+                break;
+            // get specifics
+            case "boolAtt":
+                logic = req.params.query
+                break;
+            case "enumAtt":
+                logic = req.params.query
+                break;
+                case "enumAtt":
+            // get number gte, ge, lte, le
+            case "numAtt" : 
+                (req.params.extra) ?
+                    logic[`$${req.params.extra}`] = req.params.query :
+                        logic['$gte'] = req.params.query  
+                break;
+            default:
+                // logic
+                console.log("oops")
+                res.json("other")
+        }
+
+        //  2 ) GET THE ATTRIBUTE WANTING TO SEARCH
+        let search = {}
+            search[req.params.att] = logic
+            console.log(`searching: `, search)
+
+        // 3 ) HIT THE DB find(attribute : {whatToSearch : searchSpecifics})
+        try {
+            // temp = await MODEL.find({ strAtt: { '$regex': /test/ } } )
+            temp = await MODEL.find( search )
+                                // .populate("holds")
+                                //     .populate("user")
+            res.json(temp);
+        } catch (e) {
+            // custom error message
+            temp = {
+                message: 'Error finding one.',
+                error: e
+            }
+            res.status(400).json(temp);
+        }
+    },
     update: async (req, res) => {
         // my fancy log. optional
         fancy.log("Updating", JSON.stringify(req.body))

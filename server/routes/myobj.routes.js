@@ -10,6 +10,7 @@ PURPOSE:
     - routes for the connecting collection
     - modularization: from the server, creates a direction between the client's input and the db
 */
+// http://localhost:8000/api/myobj
 import { Router } from 'express'
 import CONTROLLER from '../controllers/myobj.controller.js'
 
@@ -26,5 +27,9 @@ router.route("/myobj/:id")
     // check here to ensure we have delete
     // rather than update
     .delete(CONTROLLER.delete)
+
+router.route("/myobj/:att/:query/:extra?")
+    .get(CONTROLLER.search)
+
 
 export default router
