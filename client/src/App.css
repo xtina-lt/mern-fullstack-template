@@ -1,42 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+/* SCROLLS AND ANIMATIONS */
+/* KEEP */
+/* SCROLLBAR */
+/* Hide the vertical scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+}
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  inherit {
+      opacity: 1;
+  }
+}
+@keyframes slideUp {
+  0% {
+      transform: translateY(200%);
+  }
+  100% {
+      transform: translateY(50%)
+  }
+}
+
+/* ################## WHOLE DOC ############################ */
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: rgba(245, 245, 245, 0.8);
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  --col-black-: rgba(0, 0, 0, 0.78);
+  --col-clear-: rgba(255, 255, 255, 0);
+
+}
+
+html{
+  background-color: black;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow-y:scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1em;
+  /* background-color: purple; */
+}
+main{
+  flex: 10;
+}
+header{
+  flex: 1;
+}
+  #root > video {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 105vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  /* NAVBAR HAMBURGER */
+#nav-bar {
+  position: absolute;
+  left: 2em;
+  bottom: 2em;
+  z-index: 2;
+  border-radius: 2em;
+  /* flex for pop and desktop */
+  display: flex;
+  flex-direction: column-reverse;
+  width: min-content;
+  /* gap: .5em; */
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+  #nav-links{
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 0 0 1em 1em;
   }
-  to {
-    transform: rotate(360deg);
+    #nav-links a{
+      color: inherit;
+      text-decoration: none;
+      /* mobile move to the next line */
+      text-align: center;
+      margin: 0 .5em;
+      display: block;
+      /* make more padding */
+      padding: .7em;
+    }
+  #logo-icon{
+    width: 5em;
+    margin: 0 auto;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  #user-icon{
+    font-size: 1.5em;
   }
+  /* show when responsive */
+  .hide {
+    display: none;
+  }
+
+@media only screen and (min-width: 850px) {
+  /* NAVBAR WEBSITE */
+  /* hide menu icon when large */
+  #nav-bar {
+    /* make larger and thinner */
+    position: sticky;
+    width: 100%;
+    /* color whole bar */
+    background-color: var(--col-black-);
+    /* border-radius: 0 0 4em 4em; */
+    /* space pretty which wasn't needed in hamburger */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 5em;
+  }
+    #nav-links{
+        /* undu display block */
+        display: flex;
+        /* remove background color */
+        background-color: var(--col-clear-);
+      }
+    #user-icon{
+      /* show up again */
+      display: static;
+      /* make larger */
+
+      border-radius: 1em !important;
+      /* remove background */
+      background-color: var(--col-clear-);
+    }
+    #logo-icon{
+      /* make smaller to keep bar samll*/
+      width: 3.5em;
+      margin: 0;
+    }
 }
 
-.card {
-  padding: 2em;
+
+
+
+/* #################### PAGE SPECIFICS ################## */
+/* FADE INS */
+#catchall{
+  animation: slideUp ease both 5s;
 }
 
-.read-the-docs {
-  color: #888;
+/* GLOWS */
+/* #catchall{
+  animation: glow ease 10s;
+} */
+
+button{
+  background-color: rgba(128, 128, 128, 0.6);
+  /* background-color: rgba(240, 248, 255, 0); */
+  border: none;
+  padding: .5em;
+}
+
+#user-icon{
+  border-radius: 1em 1em 0 0;
+
 }
