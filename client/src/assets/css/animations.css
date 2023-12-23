@@ -1,0 +1,101 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    inherit {
+        opacity: 1;
+    }
+  }
+  
+@keyframes glow {
+from {
+    text-shadow: 0 0 0.2em #fff, 0 0 0.4em #fff, 0 0 0.6em rgb(228, 204, 255), 0 0 0.8em rgb(228, 204, 255), 0 0 0 1em rgb(228, 204, 255);
+}
+
+to {
+    text-shadow: 0 0 0.4em #fff, 0 0 0.6em rgba(240, 248, 255, 0.4), 0 0 0.8em rgba(240, 248, 255, 0.4), 0 0 1em rgba(240, 248, 255, 0.4), 0 0 1.2em rgba(240, 248, 255, 0.4);
+}
+}
+
+@keyframes slide-up {
+0% {
+    transform: translateY(200%);
+}
+100% {
+    transform: translateY(0%)
+}
+}
+  
+@keyframes kenburns-top {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 16%;
+    }
+    100% {
+        transform: scale(1.25) translateY(-15px);
+        transform-origin: top;
+    }
+}
+  
+@keyframes bounce-top {
+    0% {
+        transform: translateY(-45%);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateY(-24%);
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+        transform: translateY(-12%);
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+        transform: translateY(-6%);
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        transform: translateY(-4%);
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+    transform: translateY(0%);
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        transform: translateY(0%);
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up-center {
+0% {
+            transform: scale(0);
+}
+100% {
+            transform: scale(1);
+}
+}
+
+
+
+
+/*  HIDE SCROLL BAR */
+::-webkit-scrollbar {
+    width: 0;
+  }

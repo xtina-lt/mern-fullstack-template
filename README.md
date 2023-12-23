@@ -31,3 +31,23 @@
 ---
 
 # Front End
+
+**DONE:**
+- [x] Home Template
+- [x] Catchall
+- [x] Base lego block concept
+- [x] Test page started
+- [x] Modularized css
+- [x] :root
+- [x] Base animations 
+
+**TO DO:**
+- [ ] React-ify Nav using old nav
+- [ ] style template colors
+- [ ] Extra form with all possible entries 
+- [ ] Post
+- [ ] Read All
+- [ ] Read One
+- [ ] Update
+- [ ] Delete
+- [ ] Is loaded hook

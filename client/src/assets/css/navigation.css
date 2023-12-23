@@ -1,0 +1,96 @@
+/*
+PAGE NAVIGATION (#page-nav-bar)
+    - LOGO (.logo)
+    - SITE NAVIGATION (#site-nav)
+        - LINKS
+    - USER NAVIGATION (#user-nav)
+        - BUTTON
+        - LINK
+*/
+
+/*-----------   GLOBAL NAV BEGINS --------*/
+/* FOR INACTIVE CLICKS */
+.hide-nav :not(:first-child){
+    display: none;
+}
+
+
+
+/*-----------   MOBILE NAV BEGINS --------*/
+#page-nav-bar{
+/* floating */
+position: absolute;
+left: 2em;
+bottom: 2em;
+z-index: 2;
+/* center */
+background-color: black;
+display: flex;
+flex-direction: column-reverse;
+justify-content: space-between;
+/* background */
+border-radius: 1em;
+/* typography */
+
+}
+    /* ICON */
+    #page-nav-bar .logo{
+        width: 5em;
+    }
+
+    /* USER NAV */
+    #site-nav a, #user-nav a{
+    /* makes all the links above eachother */
+    display: block;
+    padding: 1em;
+    }
+        /* login button */
+        #user-nav > button{
+            /* looks prettier - small specific */
+            padding-top: 1em;
+        }
+    
+
+
+
+
+/*-----------   TABLET NAV BEGINS --------*/
+
+/* TABLET */
+@media only screen and (min-width: 800px) {
+    #page-nav-bar{
+        /* need for undu of side nav */
+        position: static;
+        /* width and color */
+        background-color: aquamarine;
+        width: 100vw;
+        /* flexing */
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        /* padding and gap */
+        padding: 0 5%;
+    }
+        #page-nav-bar a {
+            padding: 0 .5em;
+        }
+        /* bring them back next to eachother */
+        #site-nav a, #user-nav a{
+            display: inline-block;
+            padding: 1em;
+        }
+
+    /* LOGO */
+    #page-nav-bar > .logo{
+        max-width: 5em;
+    }
+
+    /* USER NAVIGATION */
+    #user-nav a{
+        /* remove extra right */
+        /* for even spacing between left and right */
+        padding-right: 0;
+    }
+}
+
+/* ------ HAMBURGER SKELETON ENDS, APP STYLE BEGINS */

@@ -1,20 +1,29 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Home from './views/Home'
+import Test from './views/Test'
+import Catchall from './views/Catchall'
+import Header from './components/Header'
+import bkg from './assets/aurora.mp4'
+
+import '../src/App.css'
 function App() {
 
   return (
     <>
       {/* BACKGROUND VIDEO - don't remove me */}
-      <video autoPlay muted loop src={bkg}/>
-      {/* <header> Title Title </header> */}
-      <Nav/>
-      <main>
-        <BrowserRouter>
+      <video autoPlay muted loop id="bk-vid" src={bkg}/>
+      <BrowserRouter>
+        <Header/>
+        <main>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="*" element={<Catchall/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="*" element={<Catchall />} />
           </Routes>
-        </BrowserRouter>
-        {/* <footer>footer</footer> */}
-      </main>
+          {/* <footer>footer</footer> */}
+        </main>
+      </BrowserRouter>
     </>
   )
 }
