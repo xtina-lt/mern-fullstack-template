@@ -99,3 +99,14 @@ to {
 ::-webkit-scrollbar {
     width: 0;
   }
+
+
+  .bounce-top{
+    animation: bounce-top 8s both;
+  }
+
+  .bkg-prim{
+    background-color: var(--bk-primary);
+    border-radius: 1em;
+    padding: 1em;
+  }

@@ -3,8 +3,11 @@ import Nav from './components/Nav'
 import Home from './views/Home'
 import Test from './views/Test'
 import Catchall from './views/Catchall'
-import Header from './components/Header'
-import bkg from './assets/aurora.mp4'
+import Header from './components/Nav'
+import bkg from './assets/keyboard-logo-bkg.mp4'
+import ShowAll from './views/ShowAll'
+import ShowOne from './views/ShowOne'
+import Create from './views/Create'
 
 import '../src/App.css'
 function App() {
@@ -12,17 +15,18 @@ function App() {
   return (
     <>
       {/* BACKGROUND VIDEO - don't remove me */}
-      <video autoPlay muted loop id="bk-vid" src={bkg}/>
       <BrowserRouter>
-        <Header/>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/test" element={<Test />} />
-            <Route path="*" element={<Catchall />} />
-          </Routes>
-          {/* <footer>footer</footer> */}
-        </main>
+        <video autoPlay muted loop id="bk-vid"src={bkg}/>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/obj/new" element={<Create/>} />
+          <Route path="/objs" element={<ShowAll/>} />
+          <Route path="/obj/:id" element={<ShowOne/>} />
+          <Route path="/test" element={<Test />} />
+          <Route path="*" element={<Catchall />} />
+        </Routes>
+        {/* <footer>footer</footer> */}
       </BrowserRouter>
     </>
   )

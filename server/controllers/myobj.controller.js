@@ -123,12 +123,13 @@ export default {
         try {
             // .findOneAndUpdate(id, body, options)
             temp = await MODEL.findOneAndUpdate(
-                                    { _id: req.params.id }, req.body,
+                                    { _id: req.body._id}, req.body,
                                     { new: true, runValidators: true })
                                 // .populate("holds")
                                 //     .populate("user")
-            res.json(temp);
+        res.status(201).json(temp);
         } catch (e) {
+            console.log(e)
             // all mongo created model errors
             temp = e.errors
             res.status(400).json(temp);

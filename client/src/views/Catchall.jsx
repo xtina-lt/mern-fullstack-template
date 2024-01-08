@@ -1,9 +1,13 @@
-import React from 'react'
-import img from '../assets/catchall.gif'
-
 const Catchall = () => {
   return (
-    <img alt="world oops lost" src={img} id="catchall"/>
+    <>
+      <h1>Oops!</h1>
+
+      <div className="bkg-prim xl-text">
+        Tell the fairy godmother another place to go...
+        <span id="catchall-emoji" className="bounce-top">🧚‍♀️</span> 
+      </div>
+    </>
   )
 }
 

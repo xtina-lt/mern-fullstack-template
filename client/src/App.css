@@ -19,19 +19,21 @@
   margin:0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
   /* overflow-y:scroll; */
 }
 
 /* VARIABLES AND ROOT STYLING */
 :root{
-  --col-bkg-dark-primary:rgba(38, 35, 40, 0.78);
-  --col-bkg-dark-secondary:rgba(0, 6, 17, 0.78);
-  --col-nk-light-white: rgb(245, 245, 245, 0.8); 
+  --rem: 16;
   --col-clear-: rgba(255, 255, 255, 0);
-  --col-primary-bkg-: rgba(128, 0, 128, 0.8);
-  --col-white  : rgba(216, 215, 216,0.8);
+  --col-white  : rgba(255, 255, 255,0.8);
   --col-primary : rgba(108, 24, 120, 0.96);
   --col-secondary: rgba(104, 197, 168, 0.8);
+  --bk-primary: rgba(35, 32, 32, 0.925);
+  --bk-secondary: rgba(0, 128, 128, 0.90);
+  --bk-tertiary: rgba(255, 105, 180,.8);
+  --bk-quaternary: rgba(128, 0, 128,.8);
   font-family: 'Raleway', sans-serif;
   color-scheme: light dark;
   font-synthesis: none;
@@ -40,6 +42,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--col-white);
+  font-size: 1em;
 }
 
 
@@ -50,34 +53,30 @@ html{
   background-color: black;
   min-width: 320px;
   /* overflow-y: scroll; */
-  height: 100vh;
 }
-  /* --- SINGLE PAGE APPLICATION --- */
   #root {
-    /* background-color: purple; */
-    /* remove if we want to take over whole page */
       margin: 0 auto;
+      width: 100vw;
       height: 100vh;
       display: flex;
       flex-direction: column;
-    /* center the whole page */
-
-      /* background-color: purple; */
     }
-
-
-      /* ---- MAIN SECTION OF SPA --- */
-      main:first-of-type{
-        /* makes nav then main */
-        overflow-y: scroll;
+    
+    
+    /* ---- MAIN SECTION OF SPA --- */
+    /*  is the first type of main section */
+    main{
+        margin: 1em auto;
+        /* MAKE IT SO THAT PAGE CONTEXT IS NOT LARGER THAN SCREEN */
         height: 100%;
-        /* REMOVE IF WANTING WHOLE PAGE WIDTH */
+        max-width: 2000px;
+        overflow-y: scroll;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
         align-items: center;
         justify-content: space-evenly;
-        /* training wheels */
-        /* background-color: pink; */
+
       }
 
 
@@ -94,7 +93,7 @@ html{
 /* WEBPAGE */
 @media only screen and (min-width: 1400px){
   body{
-    background-color: red;
+    /* background-color: red; */
     /* makes it better to see */
     font-size: 1.2em;
   }
@@ -102,16 +101,28 @@ html{
 
 
 
-
+img{
+  max-width: 20vw;
+}
 
 
 /*  --------- OTHER ------------ */
 button, a{
+  /* reset buttons and links */
+  background-color: inherit;
+  border: none;
+  color: inherit;
   font-size: inherit;
   text-decoration: none;
+  /* add buffer */
+  padding: 1em;
 }
 
-
+button{
+  background-color: var(--bk-secondary);
+  border-radius: 1em;
+  width: min-content;
+}
 /* ------------- background ------- */
 #bk-vid {
   margin: 0;
@@ -135,4 +146,87 @@ button, a{
 
 #catchall{
   max-width: 20em;
+}
+
+
+section, h1,h2,h3,h4,h5{
+  padding: .5em 1em;
+  border-radius: 1em;
+}
+
+  h1, h2, h3, h4, h5{
+    min-width: 90%;
+    width: fit-content;
+    margin: .5em auto;
+    text-align: center;
+    background-color: var(--bk-quaternary);
+    
+  }
+    h1{
+      font-size:2em;
+      background-color: var(--bk-tertiary);
+    }
+    h3{
+        background-color: var(--bk-secondary);
+      }
+  section{
+    width: fit-content;
+    background-color: var(--bk-primary);
+  }
+
+#catchall-emoji{
+  font-size: 10em;
+  display: block;
+  margin: 0 auto;
+}
+
+.xl-text{
+  font-size: 2em;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+
+}
+
+a{
+  background-color: var(--col-clear-);
+  text-align: inherit;
+}
+
+
+
+/* PLAY */
+.modal-overlay {
+  position: fixed;
+  top: 20%;
+  left: auto;
+  /* size */
+  width: fit-content;
+  height: fit-content;
+  padding: 3em;
+  /* center things */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* fancy */
+}
+
+.bk-green{
+  background-color: rgba(127, 255, 212,0.8);
+}
+
+.bk-red{
+  background-color: rgba(220, 20, 60, 0.8);
+}
+
+label{
+  display:block;
+}
+
+.block{
+  display: block;
 }
